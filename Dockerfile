@@ -1,5 +1,5 @@
 #
-# Scala and sbt Dockerfile
+# ARTIN Base Dockerfile
 #
 # https://github.com/mhandl/artin_base
 #
@@ -8,7 +8,7 @@
 FROM netflixoss/java:8
 
 ################################################################################
-# Update the packeage and install NMAP CURL & WGET & GIT
+# Update the package and install NMAP CURL & WGET & GIT
 ################################################################################
 
 RUN \
@@ -22,7 +22,7 @@ RUN \
  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 
 RUN \
-  apt-get install -y nodejs build-essential
+  apt-get install -y nodejs build-essential chrpath libssl-dev libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
 
 # Define working directory
 WORKDIR /root
